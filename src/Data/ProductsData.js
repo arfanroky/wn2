@@ -1,11 +1,12 @@
-import cap from '../images/cap.jpg';
-import plant from '../images/plant.jpg';
-import camera from '../images/camera.jpg';
-import pencil from '../images/pencil.jpg';
-import paintbrush from '../images/paintbrush.jpg';
-import paper from '../images/paper.jpg';
-import backpack from '../images/backpack.jpg';
-import coffee from '../images/coffee.jpg';
+import cap from '../images/cap.png';
+import plant from '../images/plant.png';
+import camera from '../images/camera.png';
+import pencil from '../images/pencil.png';
+import paintbrush from '../images/paintbrush.png';
+import paper from '../images/paper.png';
+import bagpack from '../images/bagpack.png';
+import coffee from '../images/coffee.png';
+
 
 export const productsData = [
     {
@@ -43,7 +44,7 @@ export const productsData = [
         offPrice: 19.5,
         price: 111.99,
         offPercent: '32% off',
-        img: backpack
+        img: bagpack
     },
     {
         category: 'Decorative insta camera',
