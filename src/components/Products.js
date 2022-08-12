@@ -17,7 +17,7 @@ const Products = ({ query , priceFilterItem}) => {
 
   return (
     <div className="py-4">
-      <div className="flex justify-between px-2 mb-4 items-center">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-4 px-2 mb-4 md:justify-between justify-items-center items-center">
         <p>Home / Home decoration / Artificial</p>
         <div className="dropdown dropdown-end">
           <label

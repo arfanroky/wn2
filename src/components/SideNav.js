@@ -10,6 +10,7 @@ import {toast } from 'react-toastify';
 const SideNav = ({ setPriceFilterItem }) => {
   const [filterByPrice, setFilterByPrice] = useState([0, 1000]);
   const [isChecked, setIsChecked] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const testing = async () => {
@@ -19,7 +20,7 @@ const SideNav = ({ setPriceFilterItem }) => {
       const finalResult = await result.filter(
         (pd) => pd.price <= filterByPrice[1]
       );
-      console.log( finalResult);
+
       if(finalResult.length === 0){
         toast.error('sorry, we do not have any product in that range!')
       }
@@ -31,12 +32,22 @@ const SideNav = ({ setPriceFilterItem }) => {
   
 
   return (
-    <aside className="p-4 shadow-lg h-[650px] bg-white mt-5 rounded-md">
-      <div className="flex items-center justify-between pb-3 border-b-2">
-        <h1 className="font-bold text-xl">Filter</h1>
+    <aside className="p-4 shadow-lg h-auto bg-white mt-5 rounded-md pb-6">
+      <div
+      onClick={() => setOpen(!open)}
+       className="md:hidden flex items-center justify-between pb-3 border-b-2">
+        <h1 className="font-bold text-xl">Filter sm</h1>
         <AdjustmentsIcon className="w-6 h-6" />
       </div>
-      <div className="py-4 border-b-2">
+
+      <div
+       className=" md:flex hidden items-center justify-between pb-3 border-b-2">
+        <h1 className="font-bold text-xl">Filter md</h1>
+        <AdjustmentsIcon className="w-6 h-6" />
+      </div>
+
+    <div className={`${open ? 'md:hidden block': 'md:block hidden'}`}>
+    <div className="py-4 border-b-2">
         <h2 className="font-medium mb-2">Brand</h2>
         <ul>
           <li className="flex gap-4">
@@ -159,6 +170,8 @@ const SideNav = ({ setPriceFilterItem }) => {
           </li>
         </ul>
       </div>
+      
+    </div>
     </aside>
   );
 };
